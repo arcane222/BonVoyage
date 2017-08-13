@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class EnemyBehavior : MonoBehaviour {
-    public GameObject target;
+public class JoystickBehavior : MonoBehaviour {
+
+    public GameObject joystickBack;
 	// Use this for initialization
 	void Start () {
-    }
+		
+	}
 	
 	// Update is called once per frame
-	void Update() {
-
+	void Update () {
+		
 	}
 }
