@@ -12,8 +12,8 @@ public class PlayerBehavior : MonoBehaviour {
     public AudioClip voyagerSound1;
     public AudioClip voyagerSound2;
     bool isWalking = false;
-    float h;
-    float v;
+    float h; //horizontal - for animation
+    float v; //vertial - for animation
     // Use this for initialization
     void Start() {
         health = 100;
