@@ -13,7 +13,7 @@ public class PlayerBehavior : MonoBehaviour {
     public AudioClip voyagerSound2;
     bool isWalking = false;
     float h; //horizontal - for animation
-    float v; //vertial - for animation
+    float v; //vertical - for animation
     // Use this for initialization
     void Start() {
         health = 100;
@@ -97,8 +97,10 @@ public class PlayerBehavior : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.name == "obstacle")
+        Debug.Log("onTriggerPlayer");
+        if(col.gameObject.name == "obstacle" || col.gameObject.name == "attack1.clone")
         {
+            //Debug.Log("puck");
             health -= 5;
         }
     }
@@ -132,13 +134,14 @@ public class PlayerBehavior : MonoBehaviour {
     {
         while (true)
         {
-            if(health < maxHealth)
+            if (health < maxHealth)
             {
-                health += 1;
+                health += 3;
             }
             yield return new WaitForSeconds(2f);
         }
     }
+
     public int getHealth()
     {
         return health;
