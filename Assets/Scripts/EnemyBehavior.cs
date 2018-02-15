@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour {
     public GameObject target; //for playerObj
-    public GameObject bullet;
+    public GameObject bullet1,bullet2;
     public Transform bulletPrefab,shooter;
     GameObject[,] bulletArray = new GameObject[2, 50]; //two type bullet
     int health, maxHealth, gunType;
@@ -18,15 +18,15 @@ public class EnemyBehavior : MonoBehaviour {
         atkSpd = 0.5f;
         for (int i = 0; i < 50; i++)
         {
-            bulletArray[0, i] = Instantiate(bullet, transform.position, Quaternion.identity);
+            bulletArray[0, i] = Instantiate(bullet1, transform.position, Quaternion.identity);
             bulletArray[0, i].name = "attack1.clone";
         }
 
-        //for (int i = 0; i < 50; i++)
-        //{
-        //    bullet[1, i] = Instantiate(bulletB, transform.position, Quaternion.identity);
-        //    bullet[1, i].name = "attack2.clone";
-        //}
+        for (int i = 0; i < 50; i++)
+        {
+            bulletArray[1, i] = Instantiate(bullet2, transform.position, Quaternion.identity);
+            bulletArray[1, i].name = "attack2.clone";
+        }
 
         // StartCoroutine(shoot());
         //StartCoroutine(shootCircular());
@@ -38,6 +38,14 @@ public class EnemyBehavior : MonoBehaviour {
 	void Update() {
         
 	}
+
+    IEnumerator StartBulletPattern()
+    {
+        StartCoroutine(shoot(0.5f));
+        yield return new WaitForSeconds(0.5f);
+        StartCoroutine(Spiral(shooter, bulletPrefab, 20, 2, 0.1f, true));
+        yield return new WaitForSeconds(0.5f);
+    }
 
     IEnumerator shoot(float atkSpd)
     {
@@ -58,13 +66,7 @@ public class EnemyBehavior : MonoBehaviour {
         }
     }
 
-    IEnumerator StartBulletPattern()
-    {
-        StartCoroutine(shoot(0.5f));
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine(Spiral(shooter, bulletPrefab,20,2,0.1f,true));
-        yield return new WaitForSeconds(0.5f);
-    }
+
 
     IEnumerator Spiral(Transform shooter, Transform bulletTrans, int shotNum, int volly, float shotTime, bool clockwise)
     {
