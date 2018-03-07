@@ -42,9 +42,9 @@ public class EnemyBehavior : MonoBehaviour {
     IEnumerator StartBulletPattern()
     {
         StartCoroutine(shoot(0.5f));
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine(Spiral(shooter, bulletPrefab, 20, 2, 0.1f, true));
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(5f);
+        //StartCoroutine(Spiral(shooter, bulletPrefab, 20, 2, 0.1f, true));
+        //yield return new WaitForSeconds(0.5f);
     }
 
     IEnumerator shoot(float atkSpd)
@@ -68,10 +68,10 @@ public class EnemyBehavior : MonoBehaviour {
 
 
 
-    IEnumerator Spiral(Transform shooter, Transform bulletTrans, int shotNum, int volly, float shotTime, bool clockwise)
-    {
-        yield return new WaitForSeconds(shotTime);
-    }
+    //IEnumerator Spiral(Transform shooter, Transform bulletTrans, int shotNum, int volly, float shotTime, bool clockwise)
+    //{
+    //    yield return new WaitForSeconds(shotTime);
+    //}
 
     //IEnumerator shootCircular()
     //{

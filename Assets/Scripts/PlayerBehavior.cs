@@ -97,7 +97,7 @@ public class PlayerBehavior : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("onTriggerPlayer");
+        //Debug.Log("onTriggerPlayer");
         if(col.gameObject.name == "obstacle" || col.gameObject.name == "attack1.clone")
         {
             //Debug.Log("puck");
