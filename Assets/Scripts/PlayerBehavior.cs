@@ -7,12 +7,20 @@ public class PlayerBehavior : MonoBehaviour {
     GameObject[ , ] bullet = new GameObject[3, 50];
     int health, maxHealth, guntype = 0;
     float x, y, movingSpd, atkSpd;
-	// Use this for initialization
-	void Start() {
+    Animator animator;      //
+    public AudioClip shootSound;
+    public AudioClip voyagerSound1;
+    public AudioClip voyagerSound2;
+    bool isWalking = false;
+    float h; //horizontal - for animation
+    float v; //vertical - for animation
+    // Use this for initialization
+    void Start() {
         health = 100;
         maxHealth = 100;
         movingSpd = 5.0f;
         atkSpd = 0.5f;
+        animator = GetComponent<Animator>();
         x = transform.position.x;
         y = transform.position.y;
         for (int i = 0; i < 50; i++)
@@ -30,22 +38,43 @@ public class PlayerBehavior : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        isWalking = false;
+        h = Input.GetAxis("Horizontal");
+        v = Input.GetAxis("Vertical");
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(new Vector3(-0.6f * movingSpd * Time.deltaTime, 0, 0));
             Debug.Log(movingSpd * Time.deltaTime);
+
+            isWalking = true;
+            animator.SetFloat("Direction_X", h);
+            animator.SetFloat("Direction_Y", v);
+            animator.SetBool("isWalking", isWalking);
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(new Vector3(0.6f * movingSpd * Time.deltaTime, 0, 0));
+
+            isWalking = true;
+            animator.SetFloat("Direction_X", h);
+            animator.SetFloat("Direction_Y", v);
+            animator.SetBool("isWalking", isWalking);
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             transform.Translate(new Vector3(0, 0.6f * movingSpd * Time.deltaTime, 0));
+            isWalking = true;
+            animator.SetFloat("Direction_X", h);
+            animator.SetFloat("Direction_Y", v);
+            animator.SetBool("isWalking", isWalking);
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(new Vector3(0, -0.6f * movingSpd * Time.deltaTime, 0));
+            isWalking = true;
+            animator.SetFloat("Direction_X", h);
+            animator.SetFloat("Direction_Y", v);
+            animator.SetBool("isWalking", isWalking);
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -55,12 +84,23 @@ public class PlayerBehavior : MonoBehaviour {
                 guntype = 0;
             }
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SoundManager.instance.ChangeBgAudio(voyagerSound1);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SoundManager.instance.ChangeBgAudio(voyagerSound2);
+            //SoundManager.instance.bgSource.Stop();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.name == "obstacle")
+        //Debug.Log("onTriggerPlayer");
+        if(col.gameObject.name == "obstacle" || col.gameObject.name == "attack1.clone")
         {
+            //Debug.Log("puck");
             health -= 5;
         }
     }
@@ -82,6 +122,7 @@ public class PlayerBehavior : MonoBehaviour {
                     if (!bullet[guntype, i].GetComponent<BulletBehavior>().isMoving())
                     {
                         bullet[guntype, i].GetComponent<BulletBehavior>().setMoving(true);
+                        SoundManager.instance.RandomizeSfx(shootSound);
                         break;
                     }
                 }
@@ -93,13 +134,14 @@ public class PlayerBehavior : MonoBehaviour {
     {
         while (true)
         {
-            if(health < maxHealth)
+            if (health < maxHealth)
             {
-                health += 1;
+                health += 3;
             }
             yield return new WaitForSeconds(2f);
         }
     }
+
     public int getHealth()
     {
         return health;

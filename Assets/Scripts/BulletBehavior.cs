@@ -47,7 +47,10 @@ public class BulletBehavior : Projectile {
             x = playerObj.transform.position.x;
             y = playerObj.transform.position.y;
             transform.position = new Vector3(x, y, 1);
-            calculateDirection(new Vector2(playerObj.transform.position.x, playerObj.transform.position.y), new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y));
+
+            Vector2 playerPosition = new Vector2(playerObj.transform.position.x, playerObj.transform.position.y);
+            Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+            calculateDirection(playerPosition,mousePosition);
             StartCoroutine(timer());
         }
     }
