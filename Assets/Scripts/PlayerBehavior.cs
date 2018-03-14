@@ -43,7 +43,7 @@ public class PlayerBehavior : MonoBehaviour {
         v = Input.GetAxis("Vertical");
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(new Vector3(-0.6f * movingSpd * Time.deltaTime, 0, 0));
+            transform.Translate(new Vector3(-0.6f * movingSpd * Time.deltaTime, 0, 0)); //0.6f는 해당 방향으로 프레임당 얼마씩 움직일지 정하는숫자.
             Debug.Log(movingSpd * Time.deltaTime);
 
             isWalking = true;
@@ -149,5 +149,8 @@ public class PlayerBehavior : MonoBehaviour {
     public int getMaxHealth()
     {
         return maxHealth;
+    }
+    public bool getIsWalking() {
+        return isWalking;
     }
 }
