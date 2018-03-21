@@ -190,10 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 206456685}
-  direction: {x: 0, y: 0, z: 0}
-  velocity: 0
-  accelaration: 0
-  dampSpeed: 2
+  movingSpeed: 1
 --- !u!1 &106573656 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1828839818715902, guid: 1d163b22d85837b48ba7936797a8d623,
@@ -1483,15 +1480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d4d088b6dbd974e96aaace1c55d7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identity: 0
-  x: 0
-  y: 0
-  fx: 0
-  fy: 0
-  dmg: 0
-  spd: 0
-  onScreen: 0
-  speed: 10
 --- !u!1 &2023831099
 GameObject:
   m_ObjectHideFlags: 0
