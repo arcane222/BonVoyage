@@ -114,6 +114,10 @@ public class EnemyBehavior : MonoBehaviour {
             Debug.Log("name:" + col.gameObject.name);
             health -= 20;
         }
+
+        if (health <= 0) {
+            Destroy(gameObject, 0.1f);
+        }
     }
     public int getHealth()
     {
