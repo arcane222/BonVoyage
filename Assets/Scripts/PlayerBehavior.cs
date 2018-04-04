@@ -12,6 +12,7 @@ public class PlayerBehavior : MonoBehaviour {
     public AudioClip voyagerSound1;
     public AudioClip voyagerSound2;
     bool isWalking = false;
+    bool isDashing = false;
     float h; //horizontal - for animation
     float v; //vertical - for animation
     // Use this for initialization
@@ -20,6 +21,8 @@ public class PlayerBehavior : MonoBehaviour {
         maxHealth = 100;
         movingSpd = 5.0f;
         atkSpd = 0.5f;
+        isDashing = true;
+
         animator = GetComponent<Animator>();
         x = transform.position.x;
         y = transform.position.y;
@@ -41,6 +44,11 @@ public class PlayerBehavior : MonoBehaviour {
         isWalking = false;
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
+
+        Vector3 xdir = new Vector3(h, 0, 0);
+        Vector3 ydir = new Vector3(0, v, 0);
+        Vector3 dir = xdir + ydir;
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(new Vector3(-0.6f * movingSpd * Time.deltaTime, 0, 0)); //0.6f는 해당 방향으로 프레임당 얼마씩 움직일지 정하는숫자.
@@ -93,6 +101,11 @@ public class PlayerBehavior : MonoBehaviour {
             SoundManager.instance.ChangeBgAudio(voyagerSound2);
             //SoundManager.instance.bgSource.Stop();
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isDashing) {
+            // transform.SetPositionAndRotation(new Vector3(),Quaternion.identity);
+            transform.Translate(0.6f*dir*10f); //FIXME
+        }
+       
     }
 
     void OnTriggerEnter2D(Collider2D col)
