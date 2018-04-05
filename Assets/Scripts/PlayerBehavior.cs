@@ -15,6 +15,7 @@ public class PlayerBehavior : MonoBehaviour {
     bool isDashing = false;
     float h; //horizontal - for animation
     float v; //vertical - for animation
+    Vector3 xdir, ydir;
     // Use this for initialization
     void Start() {
         health = 100;
@@ -22,6 +23,8 @@ public class PlayerBehavior : MonoBehaviour {
         movingSpd = 5.0f;
         atkSpd = 0.5f;
         isDashing = true;
+        xdir = new Vector3(0, 0, 0);
+        ydir = new Vector3(0, 0, 0);
 
         animator = GetComponent<Animator>();
         x = transform.position.x;
@@ -45,8 +48,6 @@ public class PlayerBehavior : MonoBehaviour {
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
 
-        Vector3 xdir = new Vector3(h, 0, 0);
-        Vector3 ydir = new Vector3(0, v, 0);
         Vector3 dir = xdir + ydir;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
@@ -58,6 +59,9 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetFloat("Direction_X", h);
             animator.SetFloat("Direction_Y", v);
             animator.SetBool("isWalking", isWalking);
+
+            getPlayerDirection();
+
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -67,6 +71,8 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetFloat("Direction_X", h);
             animator.SetFloat("Direction_Y", v);
             animator.SetBool("isWalking", isWalking);
+
+            getPlayerDirection();
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
@@ -75,6 +81,8 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetFloat("Direction_X", h);
             animator.SetFloat("Direction_Y", v);
             animator.SetBool("isWalking", isWalking);
+
+            getPlayerDirection();
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
@@ -83,6 +91,8 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetFloat("Direction_X", h);
             animator.SetFloat("Direction_Y", v);
             animator.SetBool("isWalking", isWalking);
+
+            getPlayerDirection();
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -94,18 +104,29 @@ public class PlayerBehavior : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            SoundManager.instance.ChangeBgAudio(voyagerSound1);
+            SoundManager.instance.bgSource.Pause();
+            SoundManager.instance.ChangeBgAudio(voyagerSound1); //FIXME - 배열화
+            
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SoundManager.instance.ChangeBgAudio(voyagerSound2);
+            SoundManager.instance.bgSource.Pause();
+            SoundManager.instance.ChangeBgAudio(voyagerSound2); // FIXME - 배열화
+            
             //SoundManager.instance.bgSource.Stop();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && isDashing) {
             // transform.SetPositionAndRotation(new Vector3(),Quaternion.identity);
-            transform.Translate(0.6f*dir*10f); //FIXME
+            Vector3 move = 0.6f * dir * 10f;
+            Debug.Log("move: " + move);
+            transform.Translate(move); //FIXME
         }
        
+    }
+
+    void getPlayerDirection() {
+        xdir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        ydir = new Vector3(0, Input.GetAxis("Vertical"), 0);
     }
 
     void OnTriggerEnter2D(Collider2D col)
