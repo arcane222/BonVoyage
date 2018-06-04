@@ -11,22 +11,25 @@ public class PlayerBehavior : MonoBehaviour {
     public AudioClip shootSound;
     public AudioClip voyagerSound1;
     public AudioClip voyagerSound2;
-    bool isWalking = false;
-    bool isDashing = false;
+    bool isWalking;
+    bool isDashing;
     float h; //horizontal - for animation
     float v; //vertical - for animation
     Vector3 xdir, ydir;
     // Use this for initialization
+
     void Start() {
         health = 100;
         maxHealth = 100;
         movingSpd = 5.0f;
         atkSpd = 0.5f;
         isDashing = true;
+        isWalking = true;
         xdir = new Vector3(0, 0, 0);
         ydir = new Vector3(0, 0, 0);
 
         animator = GetComponent<Animator>();
+        animator.SetBool("isWalking", false);
         x = transform.position.x;
         y = transform.position.y;
         for (int i = 0; i < 50; i++)
@@ -44,16 +47,16 @@ public class PlayerBehavior : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        isWalking = false;
+        animator.SetBool("isWalking", false);
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
-
+        
         Vector3 dir = xdir + ydir;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(new Vector3(-0.6f * movingSpd * Time.deltaTime, 0, 0)); //0.6f는 해당 방향으로 프레임당 얼마씩 움직일지 정하는숫자.
-            Debug.Log(movingSpd * Time.deltaTime);
+            //Debug.Log(movingSpd * Time.deltaTime);
 
             isWalking = true;
             animator.SetFloat("Direction_X", h);
@@ -115,11 +118,15 @@ public class PlayerBehavior : MonoBehaviour {
             
             //SoundManager.instance.bgSource.Stop();
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && isDashing) {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
             // transform.SetPositionAndRotation(new Vector3(),Quaternion.identity);
+            isDashing = true;
             Vector3 move = 0.6f * dir * 10f;
             Debug.Log("move: " + move);
             transform.Translate(move); //FIXME
+            animator.SetFloat("Direction_X", h);
+            animator.SetFloat("Direction_Y", v);
+            //animator.SetBool("isDashing", isDashing);
         }
        
     }
