@@ -38,7 +38,7 @@ public class BossBehavior : MonoBehaviour
         {
             for (int i = 0; i < oneShoting; i++)
             {
-                Debug.Log(i);
+                //Debug.Log(i);
                 //obj = (GameObject)Instantiate(bullet, boss.transform.position, Quaternion.identity);
                 if (!bulletArray[bulletType, i].GetComponent<BossBulletBehavior>().isMoving())
                 {
@@ -56,7 +56,7 @@ public class BossBehavior : MonoBehaviour
                 // bulletArray[bulletType, i].GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * Mathf.Cos(Mathf.PI * 2 * i / oneShoting), speed * Mathf.Sin(Mathf.PI * i * 2 / oneShoting)));
                 //bulletArray[bulletType, i].GetComponent<Rigidbody2D>().AddForce(new Vector2(speed * Mathf.Cos(Mathf.PI * 2 * i / oneShoting), 
                 //    speed * Mathf.Sin(Mathf.PI * i * 2 / oneShoting)));
-                Debug.Log("Blast");
+                //Debug.Log("Blast");
             }
 
             //지정해둔 각도의 방향으로 모든 총탄을 날리고, 날아가는 방향으로 방향회전을 해줍니다.

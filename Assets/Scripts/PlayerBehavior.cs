@@ -11,16 +11,25 @@ public class PlayerBehavior : MonoBehaviour {
     public AudioClip shootSound;
     public AudioClip voyagerSound1;
     public AudioClip voyagerSound2;
-    bool isWalking = false;
+    bool isWalking;
+    bool isDashing;
     float h; //horizontal - for animation
     float v; //vertical - for animation
+    Vector3 xdir, ydir;
     // Use this for initialization
+
     void Start() {
         health = 100;
         maxHealth = 100;
         movingSpd = 5.0f;
         atkSpd = 0.5f;
+        isDashing = true;
+        isWalking = true;
+        xdir = new Vector3(0, 0, 0);
+        ydir = new Vector3(0, 0, 0);
+
         animator = GetComponent<Animator>();
+        animator.SetBool("isWalking", false);
         x = transform.position.x;
         y = transform.position.y;
         for (int i = 0; i < 50; i++)
@@ -38,18 +47,24 @@ public class PlayerBehavior : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        isWalking = false;
+        animator.SetBool("isWalking", false);
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
+        
+        Vector3 dir = xdir + ydir;
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(new Vector3(-0.6f * movingSpd * Time.deltaTime, 0, 0)); //0.6f는 해당 방향으로 프레임당 얼마씩 움직일지 정하는숫자.
-            Debug.Log(movingSpd * Time.deltaTime);
+            //Debug.Log(movingSpd * Time.deltaTime);
 
             isWalking = true;
             animator.SetFloat("Direction_X", h);
             animator.SetFloat("Direction_Y", v);
             animator.SetBool("isWalking", isWalking);
+
+            getPlayerDirection();
+
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -59,6 +74,8 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetFloat("Direction_X", h);
             animator.SetFloat("Direction_Y", v);
             animator.SetBool("isWalking", isWalking);
+
+            getPlayerDirection();
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
@@ -67,6 +84,8 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetFloat("Direction_X", h);
             animator.SetFloat("Direction_Y", v);
             animator.SetBool("isWalking", isWalking);
+
+            getPlayerDirection();
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
@@ -75,6 +94,8 @@ public class PlayerBehavior : MonoBehaviour {
             animator.SetFloat("Direction_X", h);
             animator.SetFloat("Direction_Y", v);
             animator.SetBool("isWalking", isWalking);
+
+            getPlayerDirection();
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -86,13 +107,33 @@ public class PlayerBehavior : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            SoundManager.instance.ChangeBgAudio(voyagerSound1);
+            SoundManager.instance.bgSource.Pause();
+            SoundManager.instance.ChangeBgAudio(voyagerSound1); //FIXME - 배열화
+            
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            SoundManager.instance.ChangeBgAudio(voyagerSound2);
+            SoundManager.instance.bgSource.Pause();
+            SoundManager.instance.ChangeBgAudio(voyagerSound2); // FIXME - 배열화
+            
             //SoundManager.instance.bgSource.Stop();
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+            // transform.SetPositionAndRotation(new Vector3(),Quaternion.identity);
+            isDashing = true;
+            Vector3 move = 0.6f * dir * 10f;
+            Debug.Log("move: " + move);
+            transform.Translate(move); //FIXME
+            animator.SetFloat("Direction_X", h);
+            animator.SetFloat("Direction_Y", v);
+            //animator.SetBool("isDashing", isDashing);
+        }
+       
+    }
+
+    void getPlayerDirection() {
+        xdir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        ydir = new Vector3(0, Input.GetAxis("Vertical"), 0);
     }
 
     void OnTriggerEnter2D(Collider2D col)

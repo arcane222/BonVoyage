@@ -5,17 +5,23 @@ using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour {
     public GameObject target; //for playerObj
+    public GameObject boyager; 
     public GameObject bullet1,bullet2;
-    public Transform bulletPrefab,shooter;
+    //public Transform bulletPrefab,shooter;
+
     GameObject[,] bulletArray = new GameObject[2, 50]; //two type bullet
     int health, maxHealth, gunType;
     float atkSpd = 0.5f;
     AudioClip shootSound;
+    bool findPlayer;
     // Use this for initialization
+
     void Start () {
         health = 200;
         maxHealth = 200;
         atkSpd = 0.5f;
+        findPlayer = false;
+
         for (int i = 0; i < 50; i++)
         {
             bulletArray[0, i] = Instantiate(bullet1, transform.position, Quaternion.identity);
@@ -45,28 +51,30 @@ public class EnemyBehavior : MonoBehaviour {
         yield return new WaitForSeconds(5f);
         //StartCoroutine(Spiral(shooter, bulletPrefab, 20, 2, 0.1f, true));
         //yield return new WaitForSeconds(0.5f);
+        Debug.Log("shootBullet:" + findPlayer);
     }
 
     IEnumerator shoot(float atkSpd)
     {
+        Debug.Log("shoot:" + findPlayer);
+       
         while (true)
         {
             gunType = 0;
             //임시
                 for (int i = 0; i < 50; i++)
                 {
-                    if (!bulletArray[gunType, i].GetComponent<EnemyBulletBehavior>().isMoving())
+                    if (!bulletArray[gunType, i].GetComponent<EnemyBulletBehavior>().isMoving() && findPlayer)
                     {
-                    bulletArray[gunType, i].GetComponent<EnemyBulletBehavior>().setMoving(true);
+                        bulletArray[gunType, i].GetComponent<EnemyBulletBehavior>().setMoving(true);
                         //SoundManager.instance.RandomizeSfx(shootSound);
                         break;
                     }
                 }
-            yield return new WaitForSeconds(atkSpd);
+                yield return new WaitForSeconds(atkSpd);
+            
         }
     }
-
-
 
     //IEnumerator Spiral(Transform shooter, Transform bulletTrans, int shotNum, int volly, float shotTime, bool clockwise)
     //{
@@ -113,6 +121,11 @@ public class EnemyBehavior : MonoBehaviour {
         {
             Debug.Log("name:" + col.gameObject.name);
             health -= 20;
+        }
+
+        if (col.gameObject.tag.Equals("Player")) {
+            Debug.Log("tag:" + col.gameObject.tag);
+            findPlayer = true;
         }
 
         if (health <= 0) {
