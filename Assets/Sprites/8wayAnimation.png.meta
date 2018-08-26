@@ -1,0 +1,972 @@
+fileFormatVersion: 2
+guid: b97f8bf5816866b4c99361f640d595dc
+timeCreated: 1509449854
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 8wayAnimation_0
+    21300002: 8wayAnimation_1
+    21300004: 8wayAnimation_2
+    21300006: 8wayAnimation_3
+    21300008: 8wayAnimation_4
+    21300010: 8wayAnimation_5
+    21300012: 8wayAnimation_6
+    21300014: 8wayAnimation_7
+    21300016: 8wayAnimation_8
+    21300018: 8wayAnimation_9
+    21300020: 8wayAnimation_10
+    21300022: 8wayAnimation_11
+    21300024: 8wayAnimation_12
+    21300026: 8wayAnimation_13
+    21300028: 8wayAnimation_14
+    21300030: 8wayAnimation_15
+    21300032: 8wayAnimation_16
+    21300034: 8wayAnimation_17
+    21300036: 8wayAnimation_18
+    21300038: 8wayAnimation_19
+    21300040: 8wayAnimation_20
+    21300042: 8wayAnimation_21
+    21300044: 8wayAnimation_22
+    21300046: 8wayAnimation_23
+    21300048: 8wayAnimation_24
+    21300050: 8wayAnimation_25
+    21300052: 8wayAnimation_26
+    21300054: 8wayAnimation_27
+    21300056: 8wayAnimation_28
+    21300058: 8wayAnimation_29
+    21300060: 8wayAnimation_30
+    21300062: 8wayAnimation_31
+    21300064: 8wayAnimation_32
+    21300066: 8wayAnimation_33
+    21300068: 8wayAnimation_34
+    21300070: 8wayAnimation_35
+    21300072: 8wayAnimation_36
+    21300074: 8wayAnimation_37
+    21300076: 8wayAnimation_38
+    21300078: 8wayAnimation_39
+    21300080: 8wayAnimation_40
+    21300082: 8wayAnimation_41
+    21300084: 8wayAnimation_42
+    21300086: 8wayAnimation_43
+    21300088: 8wayAnimation_44
+    21300090: 8wayAnimation_45
+    21300092: 8wayAnimation_46
+    21300094: 8wayAnimation_47
+    21300096: 8wayAnimation_48
+    21300098: 8wayAnimation_49
+    21300100: 8wayAnimation_50
+    21300102: 8wayAnimation_51
+    21300104: 8wayAnimation_52
+    21300106: 8wayAnimation_53
+    21300108: 8wayAnimation_54
+    21300110: 8wayAnimation_55
+    21300112: 8wayAnimation_56
+    21300114: 8wayAnimation_57
+    21300116: 8wayAnimation_58
+    21300118: 8wayAnimation_59
+    21300120: 8wayAnimation_60
+    21300122: 8wayAnimation_61
+    21300124: 8wayAnimation_62
+    21300126: 8wayAnimation_63
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 8wayAnimation_0
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 527
+        width: 35
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 527
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_2
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 527
+        width: 35
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_3
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 527
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_4
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 526
+        width: 35
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_5
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 526
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_6
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 527
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_7
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 527
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_8
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 457
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_9
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 457
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_10
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 457
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_11
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 457
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_12
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 456
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_13
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 457
+        width: 33
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_14
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 457
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_15
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 457
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_16
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 387
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_17
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 387
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_18
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 387
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_19
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 388
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_20
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 387
+        width: 40
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_21
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 387
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_22
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 386
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_23
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 386
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_24
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 314
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_25
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 314
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_26
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 316
+        width: 46
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_27
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 315
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_28
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 315
+        width: 47
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_29
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 314
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_30
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 314
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_31
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 314
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_32
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 240
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_33
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 240
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_34
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 240
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_35
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 240
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_36
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 240
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_37
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 240
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_38
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 240
+        width: 35
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_39
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 240
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_40
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 172
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_41
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 171
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_42
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 171
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_43
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 171
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_44
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 171
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_45
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 171
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_46
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 173
+        width: 33
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_47
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 172
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_48
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 98
+        width: 43
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_49
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 97
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_50
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 97
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_51
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 97
+        width: 41
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_52
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 97
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_53
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 97
+        width: 40
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_54
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 97
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_55
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 98
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_56
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 20
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_57
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 18
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_58
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 18
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_59
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 19
+        width: 47
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_60
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 20
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_61
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 19
+        width: 48
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_62
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 19
+        width: 47
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: 8wayAnimation_63
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 20
+        width: 48
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

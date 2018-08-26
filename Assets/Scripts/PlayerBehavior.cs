@@ -7,15 +7,26 @@ public class PlayerBehavior : MonoBehaviour {
     GameObject[ , ] bullet = new GameObject[3, 50];
     int health, maxHealth, guntype = 0;
     float x, y, movingSpd, atkSpd;
-    Animator animator;      //
+   
     public AudioClip shootSound;
     public AudioClip voyagerSound1;
     public AudioClip voyagerSound2;
+   
+
+    /*for animation*/
+    Animator animator;
     bool isWalking;
+    float h; //horizontal
+    float v; //vertical
+    Vector3 dir, xdir, ydir; //for animate dir
+
+    /*for dash*/
     bool isDashing;
-    float h; //horizontal - for animation
-    float v; //vertical - for animation
-    Vector3 xdir, ydir;
+    public float dashSpeed;
+    private float dashTime;
+    public float startDashTime;
+    public GameObject dashEffect;
+
     // Use this for initialization
 
     void Start() {
@@ -27,6 +38,7 @@ public class PlayerBehavior : MonoBehaviour {
         isWalking = true;
         xdir = new Vector3(0, 0, 0);
         ydir = new Vector3(0, 0, 0);
+        dashTime = startDashTime;
 
         animator = GetComponent<Animator>();
         animator.SetBool("isWalking", false);
@@ -48,10 +60,11 @@ public class PlayerBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         animator.SetBool("isWalking", false);
+        animator.SetBool("isDashing", false);
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
         
-        Vector3 dir = xdir + ydir;
+        dir = xdir + ydir;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
@@ -120,16 +133,38 @@ public class PlayerBehavior : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             // transform.SetPositionAndRotation(new Vector3(),Quaternion.identity);
+            Instantiate(dashEffect, transform.position, Quaternion.identity);
             isDashing = true;
-            Vector3 move = 0.6f * dir * 10f;
-            Debug.Log("move: " + move);
-            transform.Translate(move); //FIXME
-            animator.SetFloat("Direction_X", h);
-            animator.SetFloat("Direction_Y", v);
+
+            // Vector3 move = 0.6f * dir * 10f;
+
+            //Debug.Log("move: " + move);
+            //transform.Translate(move); //FIXME
+            if (dashTime <= 0)
+            {
+                dir = new Vector3(0, 0, 0);
+                dashTime = startDashTime;
+                transform.Translate(new Vector3(0,0,0));
+            }
+            else {
+                dashTime -= Time.deltaTime;
+                if (!Vector3.Equals(dir, new Vector3(0, 0, 0)))
+                {
+                    animator.SetBool("isDashing", true);
+                    dir.Normalize();
+                    transform.Translate(dir * dashSpeed * Time.deltaTime);
+                    animator.SetFloat("Direction_X", h);
+                    animator.SetFloat("Direction_Y", v);
+                    
+                }
+            }
+            
+            
             //animator.SetBool("isDashing", isDashing);
         }
        
     }
+
 
     void getPlayerDirection() {
         xdir = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
@@ -190,8 +225,5 @@ public class PlayerBehavior : MonoBehaviour {
     public int getMaxHealth()
     {
         return maxHealth;
-    }
-    public bool getIsWalking() {
-        return isWalking;
     }
 }
