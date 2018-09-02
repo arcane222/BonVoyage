@@ -42,6 +42,7 @@ public class PlayerBehavior : MonoBehaviour {
 
         animator = GetComponent<Animator>();
         animator.SetBool("isWalking", false);
+        animator.SetBool("isDashing", false);
         x = transform.position.x;
         y = transform.position.y;
         for (int i = 0; i < 50; i++)
@@ -60,7 +61,6 @@ public class PlayerBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         animator.SetBool("isWalking", false);
-        animator.SetBool("isDashing", false);
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
         
@@ -131,27 +131,27 @@ public class PlayerBehavior : MonoBehaviour {
             
             //SoundManager.instance.bgSource.Stop();
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+        if (Input.GetKeyDown(KeyCode.LeftShift)) {  // dash
             // transform.SetPositionAndRotation(new Vector3(),Quaternion.identity);
             Instantiate(dashEffect, transform.position, Quaternion.identity);
             isDashing = true;
 
             // Vector3 move = 0.6f * dir * 10f;
-
-            //Debug.Log("move: " + move);
-            //transform.Translate(move); //FIXME
-            if (dashTime <= 0)
+            // Debug.Log("move: " + move);
+            // transform.Translate(move); //FIXME
+            if (dashTime <= 0) 
             {
-                dir = new Vector3(0, 0, 0);
+                dir = new Vector3(0, 0, 0);     // why??
                 dashTime = startDashTime;
-                transform.Translate(new Vector3(0,0,0));
+                animator.SetBool("isDashing", false);
+                transform.Translate(new Vector3(0,0,0)); 
             }
             else {
                 dashTime -= Time.deltaTime;
-                if (!Vector3.Equals(dir, new Vector3(0, 0, 0)))
+                if (!Vector3.Equals(dir, new Vector3(0, 0, 0))) //없어도 되지않나?
                 {
                     animator.SetBool("isDashing", true);
-                    dir.Normalize();
+                    dir.Normalize(); //없애보고 테스트 필요.
                     transform.Translate(dir * dashSpeed * Time.deltaTime);
                     animator.SetFloat("Direction_X", h);
                     animator.SetFloat("Direction_Y", v);
