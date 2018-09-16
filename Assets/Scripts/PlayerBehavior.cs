@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour {
     public GameObject bullet1Obj, bullet2Obj, bullet3Obj, cameraObj;
-    GameObject[ , ] bullet = new GameObject[3, 50];
+    GameObject[,] bullet = new GameObject[3, 50];
     int health, maxHealth, guntype = 0;
     float x, y, movingSpd, atkSpd;
-   
+
     public AudioClip shootSound;
     public AudioClip voyagerSound1;
     public AudioClip voyagerSound2;
-   
+
 
     /*for animation*/
     Animator animator;
@@ -22,6 +22,7 @@ public class PlayerBehavior : MonoBehaviour {
 
     /*for dash*/
     bool isDashing;
+    // int tempAnimFrame;
     public float dashSpeed;
     private float dashTime;
     public float startDashTime;
@@ -34,7 +35,7 @@ public class PlayerBehavior : MonoBehaviour {
         maxHealth = 100;
         movingSpd = 5.0f;
         atkSpd = 0.5f;
-        isDashing = true;
+        isDashing = false;
         isWalking = true;
         xdir = new Vector3(0, 0, 0);
         ydir = new Vector3(0, 0, 0);
@@ -56,14 +57,14 @@ public class PlayerBehavior : MonoBehaviour {
         }
         StartCoroutine(shoot());
         StartCoroutine(timer());
-	}
+    }
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update() {
         animator.SetBool("isWalking", false);
         h = Input.GetAxis("Horizontal");
         v = Input.GetAxis("Vertical");
-        
+
         dir = xdir + ydir;
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
@@ -113,7 +114,7 @@ public class PlayerBehavior : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C))
         {
             guntype += 1;
-            if(guntype == 3)
+            if (guntype == 3)
             {
                 guntype = 0;
             }
@@ -122,13 +123,13 @@ public class PlayerBehavior : MonoBehaviour {
         {
             SoundManager.instance.bgSource.Pause();
             SoundManager.instance.ChangeBgAudio(voyagerSound1); //FIXME - 배열화
-            
+
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             SoundManager.instance.bgSource.Pause();
             SoundManager.instance.ChangeBgAudio(voyagerSound2); // FIXME - 배열화
-            
+
             //SoundManager.instance.bgSource.Stop();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) {  // dash
@@ -139,28 +140,40 @@ public class PlayerBehavior : MonoBehaviour {
             // Vector3 move = 0.6f * dir * 10f;
             // Debug.Log("move: " + move);
             // transform.Translate(move); //FIXME
-            if (dashTime <= 0) 
+            if (dashTime <= 0)
             {
                 dir = new Vector3(0, 0, 0);     // why??
                 dashTime = startDashTime;
                 animator.SetBool("isDashing", false);
-                transform.Translate(new Vector3(0,0,0)); 
+                transform.Translate(new Vector3(0, 0, 0));
             }
             else {
-                dashTime -= Time.deltaTime;
+
                 if (!Vector3.Equals(dir, new Vector3(0, 0, 0))) //없어도 되지않나?
                 {
-                    animator.SetBool("isDashing", true);
-                    dir.Normalize(); //없애보고 테스트 필요.
-                    transform.Translate(dir * dashSpeed * Time.deltaTime);
-                    animator.SetFloat("Direction_X", h);
-                    animator.SetFloat("Direction_Y", v);
-                    
+
+
                 }
             }
-            
-            
+
             //animator.SetBool("isDashing", isDashing);
+        }
+        if (dashTime <= 0){
+            animator.SetBool("isDashing", false);
+            isDashing = false;
+        }
+
+        if (isDashing)
+        {
+            animator.SetBool("isDashing", true);
+            dir.Normalize(); //없애보고 테스트 필요.
+            dashTime -= Time.deltaTime;
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("TempRolling")) {
+                transform.Translate(dir * dashSpeed * Time.deltaTime);
+            }
+           
+            animator.SetFloat("Direction_X", h);
+            animator.SetFloat("Direction_Y", v);
         }
        
     }
